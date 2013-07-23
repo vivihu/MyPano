@@ -48,18 +48,15 @@
     _panIt = [[UIPanGestureRecognizer alloc] init];
     [_panIt addTarget:self action:@selector(systemPan:)];
     [self.view addGestureRecognizer:_panIt];
-//    [viewUp addGestureRecognizer:_panIt];
 }
 
 - (void)systemPan:(UIPanGestureRecognizer *)sender
 {
-    [viewUp didPan:sender];
-    
+    [viewUp didPan:_panIt];
 }
 
 - (void)panoViewDidPan:(JAPanoView *)panoView {
     [viewDown didPan:_panIt];
-    
 }
 
 - (void)didReceiveMemoryWarning

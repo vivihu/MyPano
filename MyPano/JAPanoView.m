@@ -365,12 +365,12 @@
 			}
 		}
 		_hAngle=newHAngle;
-		_vAngle=newVAngle;
+//		_vAngle=newVAngle;
 		[self render];
-		[gestureRecognizer setTranslation:CGPointZero inView:self];
         if (_delegate && _delegateDidPan) {
             [_delegate panoViewDidPan:self];
         }
+        [gestureRecognizer setTranslation:CGPointZero inView:self];
 	}
     if (gestureRecognizer.state==UIGestureRecognizerStateEnded) {
         if (_delegate && _delegateEndPan) {
